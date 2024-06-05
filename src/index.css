@@ -3,3 +3,6 @@
 @tailwind utilities;
 
 
+.font{
+    font-family: "Roboto", sans-serif;
+}

@@ -1,8 +1,9 @@
+import AboutBody from "../../partials/about/AboutBody";
 
 const About = () => {
     return (
         <div>
-            about
+          <AboutBody/>
         </div>
     );
 };

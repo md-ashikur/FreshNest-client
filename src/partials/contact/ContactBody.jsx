@@ -22,7 +22,7 @@ const ContactBody = () => {
               <li>
                 <Link to={"/"}>Home</Link>
               </li>
-              <li>Contact us</li>
+              <li className="text-primary">Contact us</li>
             </ul>
           </div>
         </div>

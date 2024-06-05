@@ -16,7 +16,7 @@ const BlogBody = () => {
               <li>
                 <Link to={"/"}>Home</Link>
               </li>
-              <li>Blog</li>
+              <li className="text-primary">Blog</li>
             </ul>
           </div>
         </div>

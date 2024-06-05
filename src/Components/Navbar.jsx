@@ -32,7 +32,7 @@ const Navbar = () => {
               <Link to={""}>Shop</Link>
             </li>
             <li>
-              <Link to={""}>About us</Link>
+              <Link to={"/about"}>About us</Link>
             </li>
             <li>
               <Link to={"/blog"}>Blog</Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl">FreshNest</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -53,7 +53,7 @@ const Navbar = () => {
             <Link to={""}>Shop</Link>
           </li>
           <li>
-            <Link to={""}>About us</Link>
+            <Link to={"/about"}>About us</Link>
           </li>
           <li>
             <Link to={"/blog"}>Blog</Link>
@@ -107,7 +107,7 @@ const Navbar = () => {
           <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
         </div>
       </div>
-      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-primary rounded-box w-52">
         <li>
           <a className="justify-between">
             Profile
