@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
         {
           path: "/",
           element: <Home />,
-          loader: () => fetch("http://localhost:3000/foods"),
+          loader: () => fetch("https://freshnest-server.vercel.app/foods"),
         },
         {
           path: "/about",
@@ -32,12 +32,12 @@ export const router = createBrowserRouter([
         {
           path: "/shop",
           element: <Shop />,
-          loader: () => fetch("http://localhost:3000/foods"),
+          loader: () => fetch("https://freshnest-server.vercel.app/foods"),
         },
         {
           path: "/blog",
           element: <Blog />,
-          // loader: () => fetch("http://localhost:3000/blog"),
+          // loader: () => fetch("https://freshnest-server.vercel.app/blog"),
         },
         {
           path: "/contact",
@@ -78,7 +78,7 @@ export const router = createBrowserRouter([
                 </PrivateRoute>
               ),
               loader: ({ params }) =>
-                fetch(`http://localhost:3000/foods/${params.id}`),
+                fetch(`https://freshnest-server.vercel.app/foods/${params.id}`),
             },
             {
               path: "create",

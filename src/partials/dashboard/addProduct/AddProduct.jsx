@@ -21,7 +21,7 @@ const AddProduct = () => {
 
     alert("Confirm Add product");
 
-    await fetch("http://localhost:3000/foods", {
+    await fetch("https://freshnest-server.vercel.app/foods", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
