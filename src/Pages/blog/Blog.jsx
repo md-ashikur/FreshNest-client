@@ -1,8 +1,9 @@
+import BlogBody from "../../partials/blog/BlogBody";
 
 const Blog = () => {
     return (
         <div>
-            blog
+            <BlogBody/>
         </div>
     );
 };

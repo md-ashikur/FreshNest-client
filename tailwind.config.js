@@ -15,11 +15,11 @@ export default {
           700: "#1B1C57",
         },
         neutral: {
-          DEFAULT: "#888B97",
+          DEFAULT: "#FF3B22",
           500: "#626687",
           700: "#1B1C57",
         },
-        third: "#FF3B22",
+        third: "#F8EEE4",
         base: "#fff",
       },
     },
