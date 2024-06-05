@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer py-10 bg-primary lg:px-16 px-5  grid lg:grid-cols-5 text-base ">
+      <footer className="footer py-10 bg-[#101010] lg:px-16 px-5  grid lg:grid-cols-5 text-base ">
         <aside className="max-w-[320px] lg:col-span-2">
           <h2 className="font-bold text-4xl ">FreshNest</h2>
           <p className="text-[#888B97]">

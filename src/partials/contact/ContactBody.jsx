@@ -142,7 +142,7 @@ const ContactBody = () => {
                 <input
                   type="submit"
                   value="Submit"
-                  className="hover:scale-[1.04] transition duration-150 ease-in-out bg-primary-500 h-[50px] text-xl px-16 w-full rounded-full text-base"
+                  className="hover:scale-[1.04] transition duration-150 ease-in-out bg-primary h-[50px] text-xl px-16 w-full rounded-full text-base"
                 />
               </button>
             </form>
