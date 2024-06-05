@@ -1,3 +1,4 @@
+import Team from "../../partials/about/Team";
 import HomeBlog from "../../partials/home/blog/HomeBlog";
 import Featured from "../../partials/home/featured/Featured";
 import OrganicFood from "../../partials/home/featured/OrganicFood";
@@ -13,6 +14,9 @@ const Home = () => {
            <OrganicFood/>
            <HomeBlog/>
            <KeyPoint/>
+           <div className="my-20">
+           <Team />
+           </div>
         </div>
     );
 };

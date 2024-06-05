@@ -156,14 +156,14 @@ const Signup = () => {
           <input
             type="submit"
             value="Sign Up"
-            className="hover:scale-[1.04] transition duration-150 ease-in-out bg-secondary h-[60px] px-7 w-full rounded-xl text-base"
+            className="hover:scale-[1.04] transition duration-150 ease-in-out bg-primary h-[60px] px-7 w-full rounded-xl text-base"
           />
         </form>
 
         <p className="text-center text-slate-700">
           Already Have an Account?
           <Link to={"/login"}>
-            <span className="text-secondary"> Login</span>
+            <span className="text-primary"> Login</span>
           </Link>
         </p>
 

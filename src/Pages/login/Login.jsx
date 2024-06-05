@@ -107,14 +107,14 @@ const Login = () => {
           <input
             type="submit"
             value="Login"
-            className="hover:scale-[1.04] transition duration-150 ease-in-out bg-secondary h-[60px] px-7 w-full rounded-xl text-base"
+            className="hover:scale-[1.04] transition duration-150 ease-in-out bg-primary h-[60px] px-7 w-full rounded-xl text-base"
           />
         </form>
 
         <p className="text-center text-slate-700">
           Don&apos;t Have any Account?
           <Link to="/signup">
-            <span className="text-secondary"> Sign Up</span>
+            <span className="text-primary"> Sign Up</span>
           </Link>
         </p>
 

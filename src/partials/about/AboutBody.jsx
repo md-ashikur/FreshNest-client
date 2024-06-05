@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaRegCircle } from "react-icons/fa";
-import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
+import { FaRegCircle } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 import img1 from "../../images/about/sale7.png";
-import man1 from "../../images/about/man1.png";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineSecurity, MdOutlineSupportAgent } from "react-icons/md";
 import { GiReturnArrow } from "react-icons/gi";
+import Team from "./Team";
 
 const AboutBody = () => {
   return (
@@ -61,78 +61,7 @@ const AboutBody = () => {
 
       {/* Good Organic Team---------- */}
       <section className="py-20 lg:px-20 px-5">
-        <div className="flex justify-center flex-col items-center">
-          <div className="flex items-center gap-1">
-            <FaRegCircle className="text-xs text-primary font-bold" />
-            <FaRegCircle className="text-xs text-primary font-bold" />
-            <FaRegCircle className="text-xs text-primary font-bold" />
-            <p className="text-xs font-semibold">FRESH FROM OUR FARM</p>
-            <FaRegCircle className="text-xs text-primary font-bold" />
-            <FaRegCircle className="text-xs text-primary font-bold" />
-            <FaRegCircle className="text-xs text-primary font-bold" />
-          </div>
-          <h2 className="text-4xl font-bold my-4">Good Organic Team</h2>
-        </div>
-
-        {/* cards-------- */}
-        <div className="grid lg:grid-cols-4 gap-5 my-5">
-          {/* card 1------ */}
-          <div className="rounded-lg p-5 flex justify-center flex-col items-center bg-third hover:shadow-xl shadow-md">
-            <div className="rounded-full h-44 w-44 my-4 overflow-hidden ">
-              <img src={man1} alt="" className="h-full w-full" />
-            </div>
-            <h3 className="font-bold text-xl">Michel Harsh</h3>
-            <p>Real Farmer</p>
-            <div className="flex text-xl gap-5 my-5 text-primary-700 ">
-              <FaFacebookF />
-              <FaXTwitter />
-              <FaInstagram />
-            </div>
-          </div>
-
-          {/* card 2------ */}
-          <div className="rounded-lg p-5 flex justify-center flex-col items-center bg-third hover:shadow-xl shadow-md">
-            <div className="rounded-full h-44 w-44 my-4 overflow-hidden ">
-              <img src={man1} alt="" className="h-full w-full" />
-            </div>
-            <h3 className="font-bold text-xl">Jakson Mike</h3>
-            <p>Real Farmer</p>
-            <div className="flex text-xl gap-5 my-5 text-primary-700 ">
-              <FaFacebookF />
-              <FaXTwitter />
-              <FaInstagram />
-            </div>
-          </div>
-
-          {/* card 3------ */}
-          <div className="rounded-lg p-5 flex justify-center flex-col items-center bg-third hover:shadow-xl shadow-md">
-            <div className="rounded-full h-44 w-44 my-4 overflow-hidden ">
-              <img src={man1} alt="" className="h-full w-full" />
-            </div>
-            <h3 className="font-bold text-xl">David Jim</h3>
-            <p>Real Farmer</p>
-            <div className="flex text-xl gap-5 my-5 text-primary-700 ">
-              <FaFacebookF />
-              <FaXTwitter />
-              <FaInstagram />
-            </div>
-          </div>
-
-          {/* card 4------ */}
-          <div className="rounded-lg p-5 flex justify-center flex-col items-center bg-third hover:shadow-xl shadow-md">
-            <div className="rounded-full h-44 w-44 my-4 overflow-hidden ">
-              <img src={man1} alt="" className="h-full w-full" />
-            </div>
-            <h3 className="font-bold text-xl">Harry Lara</h3>
-            <p>Real Farmer</p>
-            <div className="flex text-xl gap-5 my-5 text-primary-700 ">
-              <FaFacebookF />
-              <FaXTwitter />
-              <FaInstagram />
-            </div>
-          </div>
-        </div>
-
+        <Team />
         <div className="grid lg:grid-cols-4 gap-5 mt-20">
           <div className="grid grid-cols-3">
             <div>
@@ -149,7 +78,7 @@ const AboutBody = () => {
           <div className="grid grid-cols-3">
             <div>
               <div className="bg-third-300 hover:bg-primary text-primary hover:text-white hover:shadow-lg flex justify-center items-center rounded-full p-5 text-4xl w-20 h-20">
-                <MdOutlineSecurity /> 
+                <MdOutlineSecurity />
               </div>
             </div>
             <div className="col-span-2 flex flex-col justify-center">
@@ -161,7 +90,7 @@ const AboutBody = () => {
           <div className="grid grid-cols-3">
             <div>
               <div className="bg-third-300 hover:bg-primary text-primary hover:text-white hover:shadow-lg flex justify-center items-center rounded-full p-5 text-4xl w-20 h-20">
-              <GiReturnArrow />
+                <GiReturnArrow />
               </div>
             </div>
             <div className="col-span-2 flex flex-col justify-center">
@@ -173,7 +102,7 @@ const AboutBody = () => {
           <div className="grid grid-cols-3">
             <div>
               <div className="bg-third-300 hover:bg-primary text-primary hover:text-white hover:shadow-lg flex justify-center items-center rounded-full p-5 text-4xl w-20 h-20">
-              <MdOutlineSupportAgent />
+                <MdOutlineSupportAgent />
               </div>
             </div>
             <div className="col-span-2 flex flex-col justify-center">

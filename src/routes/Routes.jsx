@@ -22,17 +22,17 @@ export const router = createBrowserRouter([
         {
           path: "/",
           element: <Home />,
-          // loader: () => fetch("http://localhost:3000/house"),
+          loader: () => fetch("http://localhost:3000/foods"),
         },
         {
           path: "/about",
           element: <About />,
-          // loader: () => fetch("http://localhost:3000/about"),
+          
         },
         {
           path: "/shop",
           element: <Shop />,
-          // loader: () => fetch("http://localhost:3000/shop"),
+          loader: () => fetch("http://localhost:3000/foods"),
         },
         {
           path: "/blog",
@@ -63,7 +63,7 @@ export const router = createBrowserRouter([
           errorElement: <NotFound />,
           children: [
             {
-              path: "all",
+              path: "all-products",
               element: (
                 <PrivateRoute>
                   <AllProducts />
@@ -77,8 +77,8 @@ export const router = createBrowserRouter([
                   <UpdateProduct />
                 </PrivateRoute>
               ),
-              // loader: ({ params }) =>
-              //   fetch(`http://localhost:3000/shop/${params.id}`),
+              loader: ({ params }) =>
+                fetch(`http://localhost:3000/foods/${params.id}`),
             },
             {
               path: "create",

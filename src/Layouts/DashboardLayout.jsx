@@ -7,7 +7,7 @@ const DashboardLayout = () => {
           <ul className="menu p-4  text-base-content">
           
             <li>
-              <NavLink to={"all"}>All Houses</NavLink>
+              <NavLink to={"all-products"}>All Houses</NavLink>
             </li>
             <li>
               <NavLink to={"create"}>Add House</NavLink>
@@ -17,7 +17,7 @@ const DashboardLayout = () => {
           </ul>
         </div>
   
-        <div className="col-span-4 mt-16 p-5">
+        <div className="col-span-4  p-5">
           <Outlet />
         </div>
       </div>
