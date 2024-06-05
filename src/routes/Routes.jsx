@@ -22,22 +22,22 @@ export const router = createBrowserRouter([
         {
           path: "/",
           element: <Home />,
-          loader: () => fetch("http://localhost:3000/house"),
+          // loader: () => fetch("http://localhost:3000/house"),
         },
         {
           path: "/about",
           element: <About />,
-          loader: () => fetch("http://localhost:3000/about"),
+          // loader: () => fetch("http://localhost:3000/about"),
         },
         {
           path: "/shop",
           element: <Shop />,
-          loader: () => fetch("http://localhost:3000/shop"),
+          // loader: () => fetch("http://localhost:3000/shop"),
         },
         {
           path: "/blog",
           element: <Blog />,
-          loader: () => fetch("http://localhost:3000/blog"),
+          // loader: () => fetch("http://localhost:3000/blog"),
         },
         {
           path: "/contact",
@@ -45,11 +45,11 @@ export const router = createBrowserRouter([
          
         },
         {
-          path: "signup",
+          path: "/signup",
           element: <Signup />,
         },
         {
-          path: "login",
+          path: "/login",
           element: <Login />,
         },
   
@@ -77,8 +77,8 @@ export const router = createBrowserRouter([
                   <UpdateProduct />
                 </PrivateRoute>
               ),
-              loader: ({ params }) =>
-                fetch(`http://localhost:3000/shop/${params.id}`),
+              // loader: ({ params }) =>
+              //   fetch(`http://localhost:3000/shop/${params.id}`),
             },
             {
               path: "create",
