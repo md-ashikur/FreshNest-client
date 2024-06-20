@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import useAuth from "../Hooks/useAuth";
+import { NavLink } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { logout, user } = useAuth();
@@ -8,7 +9,7 @@ const Navbar = () => {
     await logout();
   };
   return (
-    <div className="navbar bg-primary text-base-100 sticky top-0 z-30 lg:px-20 px-5">
+    <div className="navbar bg-base drop-shadow-md text-gray-800 sticky top-0 z-30 lg:px-20 px-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,43 +30,44 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu  text-black dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to={""}>Home</Link>
+              <NavLink to={""}>Home</NavLink>
             </li>
             <li>
-              <Link to={""}>Shop</Link>
+              <NavLink to={"/shop"}>Shop</NavLink>
             </li>
             <li>
-              <Link to={"/about"}>About us</Link>
+              <NavLink to={"/about"}>About us</NavLink>
             </li>
             <li>
-              <Link to={"/blog"}>Blog</Link>
+              <NavLink to={"/blog"}>Blog</NavLink>
             </li>
             <li>
-              <Link to={"/contact"}>Contact us</Link>
+              <NavLink to={"/contact"}>Contact us</NavLink>
             </li>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">FreshNest</a>
       </div>
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to={""}>Home</Link>
+            <NavLink to={""}>Home</NavLink>
           </li>
           <li>
-            <Link to={""}>Shop</Link>
+            <NavLink to={"/shop"}>Shop</NavLink>
           </li>
           <li>
-            <Link to={"/about"}>About us</Link>
+            <NavLink to={"/about"}>About us</NavLink>
           </li>
           <li>
-            <Link to={"/blog"}>Blog</Link>
+            <NavLink to={"/blog"}>Blog</NavLink>
           </li>
           <li>
-            <Link to={"/contact"}>Contact us</Link>
+            <NavLink to={"/contact"}>Contact us</NavLink>
           </li>
         </ul>
       </div>
@@ -123,17 +125,17 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-primary rounded-box w-52"
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base rounded-box w-52"
               >
                 <li>
-                  <Link to={""} className="justify-between">
+                  <NavLink to={"/user"} className="justify-between">
                     Profile
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to={"/dashboard"} className="justify-between">
+                  <NavLink to={"/dashboard"} className="justify-between">
                     Dashboard
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
                   <a>Settings</a>
@@ -148,7 +150,7 @@ const Navbar = () => {
           {!user && (
             <ul>
               <li>
-                <Link to={"/signup"}>Sign Up</Link>
+                <NavLink to={"/signup"}>Sign Up</NavLink>
               </li>
             </ul>
           )}

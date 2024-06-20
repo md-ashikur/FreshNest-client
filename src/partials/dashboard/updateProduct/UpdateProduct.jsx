@@ -27,7 +27,7 @@ const UpdateProduct = () => {
   
       alert("Confirm Update product");
   
-      await fetch(`https://freshnest-server.vercel.app/house/${food._id}`, {
+      await fetch(`http://localhost:5000/house/${food._id}`, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json",

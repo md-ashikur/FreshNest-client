@@ -1,8 +1,9 @@
+import ShopBody from "../../partials/shop/ShopBody";
 
 const Shop = () => {
     return (
         <div>
-            shop
+           <ShopBody/>
             
         </div>
     );

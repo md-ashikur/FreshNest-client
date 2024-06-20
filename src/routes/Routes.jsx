@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/home/Home";
+import UserProfile from "../Pages/userProfile/UserProfile";
 import Login from "../Pages/login/Login";
 import NotFound from "../Pages/notFound/NotFound";
 import Signup from "../Pages/signup/Signup";
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
         {
           path: "/",
           element: <Home />,
-          loader: () => fetch("https://freshnest-server.vercel.app/foods"),
+          // loader: () => fetch("http://localhost:5000/foods"),
         },
         {
           path: "/about",
@@ -32,16 +33,21 @@ export const router = createBrowserRouter([
         {
           path: "/shop",
           element: <Shop />,
-          loader: () => fetch("https://freshnest-server.vercel.app/foods"),
+          // loader: () => fetch("http://localhost:5000/foods"),
         },
         {
           path: "/blog",
           element: <Blog />,
-          // loader: () => fetch("https://freshnest-server.vercel.app/blog"),
+          // loader: () => fetch("http://localhost:5000/blog"),
         },
         {
           path: "/contact",
           element: <Contact />,
+         
+        },
+        {
+          path: "/user",
+          element: <UserProfile/>
          
         },
         {
@@ -77,8 +83,8 @@ export const router = createBrowserRouter([
                   <UpdateProduct />
                 </PrivateRoute>
               ),
-              loader: ({ params }) =>
-                fetch(`https://freshnest-server.vercel.app/foods/${params.id}`),
+              // loader: ({ params }) =>
+              //   fetch(`http://localhost:5000/foods/${params.id}`),
             },
             {
               path: "create",

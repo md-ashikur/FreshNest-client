@@ -1,0 +1,8 @@
+.active{
+    background-color: transparent !important;
+    color: #81C408 !important;
+}
+
+.menu a:hover{
+    background-color: transparent !important;
+}

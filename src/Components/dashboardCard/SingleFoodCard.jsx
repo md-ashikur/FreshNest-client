@@ -8,7 +8,7 @@ const SingleFoodCard = ({ food, onDelete }) => {
 
   const handleDelete = async () => {
     alert("Are you sure you want to delete");
-    await fetch(`https://freshnest-server.vercel.app/foods/${_id}`, {
+    await fetch(`http://localhost:5000/foods/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
