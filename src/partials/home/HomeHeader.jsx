@@ -6,7 +6,7 @@ const HomeHeader = () => {
     <div className="grid lg:grid-cols-2 gap-5 py-20 lg:px-20 px-5">
       <div>
         <p className="uppercase font-bold text-neutral">100% organic foods</p>
-        <h1 className="text-8xl font-black">
+        <h1 className="lg:text-8xl text-5xl font-black">
           Nourish <br></br>Your Health{" "}
           <span className="text-primary">Naturally</span>
         </h1>
