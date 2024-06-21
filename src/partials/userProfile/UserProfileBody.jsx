@@ -1,12 +1,11 @@
 import  { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../Hooks/useAuth';
 
 const UserProfileBody = () => {
-  const [user, setUser] = useState({
-    name: 'John Doe',
-    email: 'johndoe@example.com',
-    profilePicture: 'default-profile.jpg',
-  });
+  // const [user, setUser] = useState({});
+
+  const { user, setUser } = useAuth();
   const [newProfilePicture, setNewProfilePicture] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -42,7 +41,7 @@ const handlePasswordChange = (e) => {
           <div className="mb-4 lg:mb-0 lg:w-1/3 flex flex-col items-center">
             <div className="w-32 h-32 rounded-full overflow-hidden">
               <img
-                src={newProfilePicture || user.profilePicture}
+                src={newProfilePicture || user?.photoURL}
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
@@ -70,12 +69,12 @@ const handlePasswordChange = (e) => {
                   <label className="block text-gray-700">Name</label>
                   <input
                     type="text"
-                    name="name"
-                    defaultValue={user.name}
-                    {...register('name', { required: true })}
+                    name="displayName"
+                    defaultValue={user.displayName}
+                    {...register('displayName', { required: true })}
                     className="w-full p-2 border border-gray-300 rounded"
                   />
-                  {errors.name && <span className="text-red-500">Name is required</span>}
+                  {errors.displayName && <span className="text-red-500">Name is required</span>}
                 </div>
                 <div className="mb-4">
                   <label className="block text-gray-700">Email</label>
@@ -97,7 +96,7 @@ const handlePasswordChange = (e) => {
             ) : (
               <div>
                 <div className="mb-4">
-                  <p className="text-gray-700"><strong>Name:</strong> {user.name}</p>
+                  <p className="text-gray-700"><strong>Name:</strong> {user.displayName}</p>
                 </div>
                 <div className="mb-4">
                   <p className="text-gray-700"><strong>Email:</strong> {user.email}</p>

@@ -20,7 +20,29 @@ const Signup = () => {
   const { createUser, user } = useAuth();
   const navigate = useNavigate();
 
+  const { googleLogin, guser } = useAuth();
 
+  const handleGoogleSignIn = () => {
+    googleLogin().then((data) => {
+      if (data?.user?.email) {
+        const userInfo = {
+          email: data?.user?.email,
+          name: data?.user?.displayName,
+        };
+        fetch("http://localhost:5000/user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("token", data?.token);
+          });
+      }
+    });
+  };
   
   const from = "/login";
   const onSubmit = (data) => {
@@ -29,7 +51,8 @@ const Signup = () => {
   
 
     createUser(email, password);
-    if (user) {
+
+    if (user || guser) {
       navigate(from);
     }
     reset();
@@ -181,7 +204,7 @@ const Signup = () => {
           >
             <FaFacebookF /> Facebook
           </button>
-          <button className="border border-[#d93025] px-7 py-2 w-[200px] rounded-lg text-[#d93025] hover:bg-[#d93025] hover:text-white flex items-center gap-3 justify-center">
+          <button onClick={handleGoogleSignIn} className="border border-[#d93025] px-7 py-2 w-[200px] rounded-lg text-[#d93025] hover:bg-[#d93025] hover:text-white flex items-center gap-3 justify-center">
             <FaGoogle />
             Google
           </button>

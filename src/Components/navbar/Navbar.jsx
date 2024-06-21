@@ -28,6 +28,7 @@ const Navbar = () => {
               />
             </svg>
           </div>
+          
           <ul
             tabIndex={0}
             className="menu  text-black dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
@@ -104,7 +105,8 @@ const Navbar = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    src={user?.photoURL || "/public/placeholder.jpg"}
+                   
                   />
                 </div>
               </div>
