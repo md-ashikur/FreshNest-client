@@ -14,7 +14,7 @@ const Home = () => {
            <OrganicFood/>
            <HomeBlog/>
            <KeyPoint/>
-           <div className="my-20">
+           <div className="my-20 lg:px-20 px-5">
            <Team />
            </div>
         </div>

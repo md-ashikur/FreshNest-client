@@ -11,17 +11,17 @@ const AddProduct = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
- 
     const img = data.img;
     const name = data.name;
     const price = data.price;
     const description = data.description;
+    const category = data.category;
 
-    const alldata = { img, name, price, description };
+    const alldata = { img, name, price, description, category };
 
     alert("Confirm Add product");
 
-    await fetch("http://localhost:5000/foods", {
+    await fetch("http://localhost:5000/product", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -35,11 +35,12 @@ const AddProduct = () => {
         reset();
       });
   };
+
   return (
     <div>
-      
-      <section className="py-20  px-20 bg-third">
-        <div className="w-[40vw] bg-white mx-auto my-7 p-10 rounded-lg">
+      <section className="py-20 px-5 lg:px-20 bg-third">
+        <div className="lg:w-[40vw] bg-white mx-auto my-7 lg:p-10 rounded-lg">
+          <p className="text-2xl font-bold">Add Product</p>
           {/* form-------------- */}
           <form onSubmit={handleSubmit(onSubmit)} className="my-5">
             {/* img------- */}
@@ -82,13 +83,34 @@ const AddProduct = () => {
                 placeholder="Price"
                 className="outline-none border-inherit border my-2 px-5 py-3 w-full h-[50px] rounded-2xl"
                 {...register("price", {
-                  required: "price is required",
+                  required: "Price is required",
                 })}
                 aria-invalid={errors.price ? "true" : "false"}
               />
               {errors.price && (
                 <p role="alert" className="pl-2 text-red-500 text-xs ">
                   {errors.price.message}
+                </p>
+              )}
+            </div>
+
+            {/* category------ */}
+            <div>
+              <select
+                className="outline-none border-inherit border my-2 px-5 py-3 w-full h-[50px] rounded-2xl"
+                {...register("category", {
+                  required: "Category is required",
+                })}
+                aria-invalid={errors.category ? "true" : "false"}
+              >
+                <option value="">Select Category</option>
+                <option value="Healthy Foods">Healthy Foods</option>
+                <option value="Dairy Farm">Dairy Farm</option>
+                <option value="Package Foods">Package Foods</option>
+              </select>
+              {errors.category && (
+                <p role="alert" className="pl-2 text-red-500 text-xs ">
+                  {errors.category.message}
                 </p>
               )}
             </div>

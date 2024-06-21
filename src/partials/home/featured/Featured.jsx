@@ -1,7 +1,18 @@
 import { FaRegCircle } from "react-icons/fa";
-import p1 from "../../../images/home/product12.png"
+
+import { useEffect, useState } from "react";
+import SingleShopCard from "../../shop/SingleShopCard";
 
 const Featured = () => {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
   return (
     <div>
       <div className="flex justify-center flex-col items-center">
@@ -18,30 +29,14 @@ const Featured = () => {
       </div>
 
       <div className="grid lg:grid-cols-3 gap-5 lg:px-20 px-5 my-10">
-        <div className="border p-5 rounded-lg">
-          <div className="flex justify-center w-full h-80 rounded-lg items-center p-5 bg-third ">
-            <img src={p1} alt="" />
-          </div>
-          <h2 className="text-xl font-bold mt-5">Organic Tomato</h2>
-          <p className="font-bold text-primary my-3">$50.00</p>
-          <button className="bg-primary px-6 py-3 text-base rounded-full">View Details</button>
-        </div>
-        <div className="border p-5 rounded-lg">
-          <div className="flex justify-center w-full h-80 rounded-lg items-center p-5 bg-third ">
-            <img src={p1} alt="" />
-          </div>
-          <h2 className="text-xl font-bold mt-5">Organic Tomato</h2>
-          <p className="font-bold text-primary my-3">$50.00</p>
-          <button className="bg-primary px-6 py-3 text-base rounded-full">View Details</button>
-        </div>
-        <div className="border p-5 rounded-lg">
-          <div className="flex justify-center w-full h-80 rounded-lg items-center p-5 bg-third ">
-            <img src={p1} alt="" />
-          </div>
-          <h2 className="text-xl font-bold mt-5">Organic Tomato</h2>
-          <p className="font-bold text-primary my-3">$50.00</p>
-          <button className="bg-primary px-6 py-3 text-base rounded-full">View Details</button>
-        </div>
+       
+      {products.slice(0, 3).map((food) => (
+          <SingleShopCard
+            key={food._id}
+            food={food}
+          />
+        ))}
+       
       </div>
     </div>
   );

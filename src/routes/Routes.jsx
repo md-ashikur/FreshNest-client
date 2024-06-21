@@ -15,6 +15,9 @@ import Contact from "../Pages/contact/Contact";
 import DashboardBody from "../partials/dashboard/DashboardBody";
 import AllProducts from "../partials/dashboard/allProducts/AllProducts";
 import AddProduct from "../partials/dashboard/addProduct/AddProduct";
+import ProductDetails from "../partials/shop/ProductDetails";
+import PrivateRoute from "./privateRoute/PrivateRoute";
+import UpdateProduct from "../partials/dashboard/updateProduct/UpdateProduct";
 
 export const router = createBrowserRouter([
     {
@@ -24,7 +27,7 @@ export const router = createBrowserRouter([
         {
           path: "/",
           element: <Home />,
-          // loader: () => fetch("http://localhost:5000/foods"),
+
         },
         {
           path: "/about",
@@ -34,12 +37,17 @@ export const router = createBrowserRouter([
         {
           path: "/shop",
           element: <Shop />,
-          // loader: () => fetch("http://localhost:5000/foods"),
+     
+        },
+        {
+          path: "/details/:id",
+          element: <PrivateRoute><ProductDetails /></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
         },
         {
           path: "/blog",
           element: <Blog />,
-          // loader: () => fetch("http://localhost:5000/blog"),
+    
         },
         {
           path: "/contact",
@@ -48,7 +56,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/user",
-          element: <UserProfile/>
+          element: <PrivateRoute><UserProfile/></PrivateRoute>
          
         },
         {
@@ -70,18 +78,31 @@ export const router = createBrowserRouter([
       children: [
         {
           path: "dashboard",
-          element: <DashboardBody />,
+          element:(<PrivateRoute><DashboardBody /> </PrivateRoute> ),
           // loader: () => fetch("http://localhost:5000/foods"),
         },
         {
           path: "all-products",
-          element: <AllProducts/>,
-          // loader: () => fetch("http://localhost:5000/foods"),
+          element: (<PrivateRoute><AllProducts/></PrivateRoute>),
+          
         },
         {
           path: "add-product",
-          element: <AddProduct/>,
-          // loader: () => fetch("http://localhost:5000/foods"),
+          element: (<PrivateRoute><AddProduct/></PrivateRoute>) ,
+         
+        },
+
+        {
+          path: "all-products/edit/:id",
+          element: (
+            <PrivateRoute>
+              <UpdateProduct />
+            </PrivateRoute>
+          ),
+          loader: ({ params }) =>
+            fetch(
+              `http://localhost:5000/products/${params.id}`
+            ),
         },
        
 

@@ -6,9 +6,9 @@ const DashboardLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex bg-gray-200">
+    <div className="grid lg:grid-cols-5 bg-gray-200">
       {/* Mobile Header */}
-      <header className="w-full bg-gray-800 text-gray-100 flex items-center justify-between p-4 md:hidden">
+      <header className="w-full sticky top-0 bg-gray-800 text-gray-100 flex items-center justify-between p-4 md:hidden">
         
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
           {isSidebarOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -37,7 +37,7 @@ const DashboardLayout = () => {
       )}
 
       {/* Main content */}
-      <main className="flex-grow p-6 ">
+      <main className="lg:col-span-4 p-6 ">
        <Outlet/>
       </main>
     </div>
