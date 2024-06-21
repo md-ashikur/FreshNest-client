@@ -37,6 +37,7 @@ const AddProduct = () => {
   };
   return (
     <div>
+      
       <section className="py-20  px-20 bg-third">
         <div className="w-[40vw] bg-white mx-auto my-7 p-10 rounded-lg">
           {/* form-------------- */}

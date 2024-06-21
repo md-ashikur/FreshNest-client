@@ -133,7 +133,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/dashboard"} className="justify-between">
+                  <NavLink to={"/admin-dashboard/dashboard"} className="justify-between">
                     Dashboard
                   </NavLink>
                 </li>

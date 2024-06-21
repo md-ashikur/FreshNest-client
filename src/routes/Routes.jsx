@@ -3,17 +3,18 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/home/Home";
 import UserProfile from "../Pages/userProfile/UserProfile";
 import Login from "../Pages/login/Login";
-import NotFound from "../Pages/notFound/NotFound";
+
 import Signup from "../Pages/signup/Signup";
-import PrivateRoute from "./privateRoute/PrivateRoute";
-import AllProducts from "../partials/dashboard/allProducts/AllProducts";
+
 import DashboardLayout from "../Layouts/DashboardLayout";
-import UpdateProduct from "../partials/dashboard/updateProduct/UpdateProduct";
-import AddProduct from "../partials/dashboard/addProduct/AddProduct";
+
 import About from "../Pages/about/About";
 import Shop from "../Pages/shop/Shop";
 import Blog from "../Pages/blog/Blog";
 import Contact from "../Pages/contact/Contact";
+import DashboardBody from "../partials/dashboard/DashboardBody";
+import AllProducts from "../partials/dashboard/allProducts/AllProducts";
+import AddProduct from "../partials/dashboard/addProduct/AddProduct";
 
 export const router = createBrowserRouter([
     {
@@ -59,43 +60,32 @@ export const router = createBrowserRouter([
           element: <Login />,
         },
   
-        {
-          path: "dashboard",
-          element: (
-            <PrivateRoute>
-              <DashboardLayout />
-            </PrivateRoute>
-          ),
-          errorElement: <NotFound />,
-          children: [
-            {
-              path: "all-products",
-              element: (
-                <PrivateRoute>
-                  <AllProducts />
-                </PrivateRoute>
-              ),
-            },
-            {
-              path: "all/update/:id",
-              element: (
-                <PrivateRoute>
-                  <UpdateProduct />
-                </PrivateRoute>
-              ),
-              // loader: ({ params }) =>
-              //   fetch(`http://localhost:5000/foods/${params.id}`),
-            },
-            {
-              path: "create",
-              element: (
-                <PrivateRoute>
-                  <AddProduct />
-                </PrivateRoute>
-              ),
-            },
-          ],
-        },
+       
+        
       ],
     },
+    {
+      path: "/admin-dashboard",
+      element: <DashboardLayout/>,
+      children: [
+        {
+          path: "dashboard",
+          element: <DashboardBody />,
+          // loader: () => fetch("http://localhost:5000/foods"),
+        },
+        {
+          path: "all-products",
+          element: <AllProducts/>,
+          // loader: () => fetch("http://localhost:5000/foods"),
+        },
+        {
+          path: "add-product",
+          element: <AddProduct/>,
+          // loader: () => fetch("http://localhost:5000/foods"),
+        },
+       
+
+          ],
+        },
+   
   ]);
